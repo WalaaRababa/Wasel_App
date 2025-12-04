@@ -1,86 +1,637 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Tracker – Terms & Conditions</title>
+    <title>Terms & Conditions - Video Tracker by Wasel</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
             color: #333;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            min-height: 100vh;
+            padding: 20px;
         }
-        h1 {
-            color: #222;
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
-        h2 {
-            margin-top: 35px;
+
+        .header {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .last-updated {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #764ba2;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e1e8ed;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 8px;
+            height: 30px;
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .section ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            color: #555;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .section li::before {
+            content: '•';
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            left: -15px;
+        }
+
+        .highlight-box {
+            background: #f3e7ff;
+            border-left: 4px solid #764ba2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #764ba2;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h2::before {
+            background: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-item strong {
+            min-width: 100px;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-section {
+                padding: 25px 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .contact-item strong {
+                margin-bottom: 5px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>Terms & Conditions</h1>
+            <div class="subtitle">Video Tracker by Wasel</div>
+            <div class="last-updated">Last Updated: December 2025</div>
+        </div>
 
-<h1>Terms & Conditions – Video Tracker</h1>
-<p><strong>Last Updated:</strong> December 2025</p>
+        <div class="content">
+            <div class="intro">
+                <p>These Terms and Conditions ("Terms") govern your use of the <strong>Video Tracker</strong> application ("the App"), operated by <strong>Wasel</strong>. By using the App, you agree to these Terms.</p>
+            </div>
 
-<p>
-These Terms and Conditions (“Terms”) govern your use of the Video Tracker application (“the App”), operated by <strong>Wasel</strong>.
-By using the App, you agree to these Terms.
-</p>
+            <div class="section">
+                <h2>1. Purpose of the App</h2>
+                <p>Video Tracker is designed solely to access and analyze LinkedIn Page analytics for internal reporting purposes. The App does not collect, store, or process any personal information.</p>
+            </div>
 
-<h2>1. Purpose of the App</h2>
-<p>
-Video Tracker is designed solely to access and analyze LinkedIn Page analytics for internal reporting purposes.  
-The App does not collect, store, or process any personal information.
-</p>
+            <div class="section">
+                <h2>2. Access Requirements</h2>
+                <p>To use the App, you must have administrative permissions on the LinkedIn Page you want to analyze. The App does not access any data beyond LinkedIn Page insights.</p>
+            </div>
 
-<h2>2. Access Requirements</h2>
-<p>
-To use the App, you must have administrative permissions on the LinkedIn Page you want to analyze.  
-The App does not access any data beyond LinkedIn Page insights.
-</p>
+            <div class="section">
+                <h2>3. Acceptable Use</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Misuse the App or use it for unauthorized data access</li>
+                    <li>Attempt to extract or store personal data</li>
+                    <li>Use the App for commercial resale, advertising, or data redistribution</li>
+                </ul>
+            </div>
 
-<h2>3. Acceptable Use</h2>
-<p>You agree not to:</p>
-<ul>
-    <li>Misuse the App or use it for unauthorized data access.</li>
-    <li>Attempt to extract or store personal data.</li>
-    <li>Use the App for commercial resale, advertising, or data redistribution.</li>
-</ul>
+            <div class="section">
+                <h2>4. Data Handling</h2>
+                <p>The App accesses analytics data temporarily to generate reports. No personal data is collected, stored, sold, or shared.</p>
+                <div class="highlight-box">
+                    <strong>Important:</strong> All data handling complies with LinkedIn's API Terms of Use and applicable data protection regulations.
+                </div>
+            </div>
 
-<h2>4. Data Handling</h2>
-<p>
-The App accesses analytics data temporarily to generate reports.  
-No personal data is collected, stored, sold, or shared.
-</p>
+            <div class="section">
+                <h2>5. Compliance</h2>
+                <p>You agree to comply with LinkedIn's API Terms of Use. We reserve the right to discontinue access if LinkedIn policies change or if we detect violations of these Terms.</p>
+            </div>
 
-<h2>5. Compliance</h2>
-<p>
-You agree to comply with LinkedIn’s API Terms of Use.  
-We reserve the right to discontinue access if LinkedIn policies change.
-</p>
+            <div class="section">
+                <h2>6. Limitation of Liability</h2>
+                <p>Wasel is not responsible for any errors, downtime, or unavailability caused by LinkedIn services or API limitations. The App is provided "as is" without warranties of any kind.</p>
+            </div>
 
-<h2>6. Limitation of Liability</h2>
-<p>
-Wasel is not responsible for any errors, downtime, or unavailability caused by LinkedIn services or API limitations.
-</p>
+            <div class="section">
+                <h2>7. Changes to Terms</h2>
+                <p>We may update these Terms at any time. Continued use of the App means acceptance of any changes. We encourage you to review these Terms periodically.</p>
+            </div>
 
-<h2>7. Changes to Terms</h2>
-<p>
-We may update these Terms at any time. Continued use of the App means acceptance of any changes.
-</p>
+            <div class="contact-section">
+                <h2>8. Contact Information</h2>
+                <p style="margin-bottom: 25px;">For questions regarding these Terms & Conditions, please contact us:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Company:</strong>
+                        <span>Wasel</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong>
+                        <a href="https://www.waselae.com/" target="_blank">https://www.waselae.com/</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:walaarababa@gmail.com">walaarababa@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h2>8. Contact Information</h2>
-<p>
-For any questions about these Terms, contact us at:  
-<br><strong>Walāa Rababah</strong><br>
-Email: <a href="mailto:walaarababa@gmail.com">walaarababa@gmail.com</a><br>
-Website: <a href="https://www.waselae.com/">https://www.waselae.com/</a>
-</p>
+        <div class="footer">
+            <p>&copy; 2025 Wasel. All rights reserved. | Video Tracker - LinkedIn Analytics Tool</p>
+        </div>
+    </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Video Tracker by Wasel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .last-updated {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #764ba2;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e1e8ed;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 8px;
+            height: 30px;
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .section ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            color: #555;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .section li::before {
+            content: '•';
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            left: -15px;
+        }
+
+        .highlight-box {
+            background: #f3e7ff;
+            border-left: 4px solid #764ba2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #764ba2;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h2::before {
+            background: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-item strong {
+            min-width: 100px;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-section {
+                padding: 25px 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .contact-item strong {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Terms & Conditions</h1>
+            <div class="subtitle">Video Tracker by Wasel</div>
+            <div class="last-updated">Last Updated: December 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p>These Terms and Conditions ("Terms") govern your use of the <strong>Video Tracker</strong> application ("the App"), operated by <strong>Wasel</strong>. By using the App, you agree to these Terms.</p>
+            </div>
+
+            <div class="section">
+                <h2>1. Purpose of the App</h2>
+                <p>Video Tracker is designed solely to access and analyze LinkedIn Page analytics for internal reporting purposes. The App does not collect, store, or process any personal information.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Access Requirements</h2>
+                <p>To use the App, you must have administrative permissions on the LinkedIn Page you want to analyze. The App does not access any data beyond LinkedIn Page insights.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Acceptable Use</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Misuse the App or use it for unauthorized data access</li>
+                    <li>Attempt to extract or store personal data</li>
+                    <li>Use the App for commercial resale, advertising, or data redistribution</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Data Handling</h2>
+                <p>The App accesses analytics data temporarily to generate reports. No personal data is collected, stored, sold, or shared.</p>
+                <div class="highlight-box">
+                    <strong>Important:</strong> All data handling complies with LinkedIn's API Terms of Use and applicable data protection regulations.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. Compliance</h2>
+                <p>You agree to comply with LinkedIn's API Terms of Use. We reserve the right to discontinue access if LinkedIn policies change or if we detect violations of these Terms.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. Limitation of Liability</h2>
+                <p>Wasel is not responsible for any errors, downtime, or unavailability caused by LinkedIn services or API limitations. The App is provided "as is" without warranties of any kind.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Changes to Terms</h2>
+                <p>We may update these Terms at any time. Continued use of the App means acceptance of any changes. We encourage you to review these Terms periodically.</p>
+            </div>
+
+            <div class="contact-section">
+                <h2>8. Contact Information</h2>
+                <p style="margin-bottom: 25px;">For questions regarding these Terms & Conditions, please contact us:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Company:</strong>
+                        <span>Wasel</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong>
+                        <a href="https://www.waselae.com/" target="_blank">https://www.waselae.com/</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:walaarababa@gmail.com">walaarababa@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Wasel. All rights reserved. | Video Tracker - LinkedIn Analytics Tool</p>
+        </div>
+    </div>
 </body>
 </html>
