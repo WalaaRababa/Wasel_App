@@ -1,56 +1,955 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Tracker – Privacy Policy</title>
+    <title>Privacy Policy - Video Tracker by Wasel</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
             color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
         }
-        h1 {
-            color: #222;
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
-        h2 {
-            margin-top: 35px;
+
+        .header {
+            background: linear-gradient(135deg, #0077B5 0%, #00A0DC 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .last-updated {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #0077B5;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #0077B5;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e1e8ed;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 8px;
+            height: 30px;
+            background: linear-gradient(135deg, #0077B5, #00A0DC);
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .section ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            color: #555;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .section li::before {
+            content: '•';
+            color: #0077B5;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            left: -15px;
+        }
+
+        .highlight-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0077B5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #0077B5;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h2::before {
+            background: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-item strong {
+            min-width: 100px;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-section {
+                padding: 25px 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .contact-item strong {
+                margin-bottom: 5px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <div class="subtitle">Video Tracker by Wasel</div>
+            <div class="last-updated">Last Updated: December 2025</div>
+        </div>
 
-<h1>Privacy Policy – Video Tracker</h1>
-<p><strong>Last Updated:</strong> December 2025</p>
+        <div class="content">
+            <div class="intro">
+                <p><strong>Video Tracker</strong> ("the App") is developed and operated by <strong>Wasel</strong>. This Privacy Policy explains how we handle data collected through the App. The App is designed solely to access and analyze LinkedIn Page analytics for internal reporting purposes. <strong>We do not collect, store, sell, or share any personal information about users.</strong></p>
+            </div>
 
-<p>
-Video Tracker (“the App”) is developed and operated by <strong>Wasel</strong>.  
-This Privacy Policy explains how we handle data collected through the App.  
-The App is designed solely to access and analyze LinkedIn Page analytics for internal reporting purposes.  
-We do not collect, store, sell, or share any personal information about users.
-</p>
+            <div class="section">
+                <h2>1. Data We Access</h2>
+                <p>The App may access the following data from LinkedIn:</p>
+                <ul>
+                    <li>Page insights and analytics such as impressions, views, engagement, and follower metrics</li>
+                    <li>Data related only to the LinkedIn Page for which we have administrative permissions</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Important:</strong> No personal user data is collected or stored.
+                </div>
+            </div>
 
-<h2>1. Data We Access</h2>
-<p>The App may access the following data from LinkedIn:</p>
-<ul>
-    <li>Page insights and analytics such as impressions, views, engagement, and follower metrics.</li>
-    <li>Data related only to the LinkedIn Page for which we have administrative permissions.</li>
-</ul>
-<p>No personal user data is collected or stored.</p>
+            <div class="section">
+                <h2>2. How We Use the Data</h2>
+                <p>The accessed analytics data is used only for:</p>
+                <ul>
+                    <li>Internal reporting and analysis</li>
+                    <li>Performance tracking and monitoring</li>
+                    <li>Improving content strategy</li>
+                </ul>
+                <p>We do not use the data for advertising, distribution, or sharing with any third party.</p>
+            </div>
 
-<h2>2. How We Use the Data</h2>
-<p>The accessed analytics data is used only for:</p>
-<ul>
-    <li>Internal reporting</li>
-    <li>Performance tracking</li>
-    <li>Improving content strategy</li>
-</ul>
-<p>We do not use the data for advertising, distribution, or sharing with any third party.</p>
+            <div class="section">
+                <h2>3. Data Storage</h2>
+                <p>We do not store any personal data. Analytics data may be used temporarily for generating internal reports, but it is not stored long-term or shared externally.</p>
+            </div>
 
-<h2>3. Data Storage</h2>
-<p>
-We do not store any personal data. Analytics data may be used temporarily for generating internal reports, 
+            <div class="section">
+                <h2>4. Data Sharing</h2>
+                <p>We do not sell, disclose, or share any data with third parties. Your privacy and the confidentiality of LinkedIn analytics data are our top priorities.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Security</h2>
+                <p>We take reasonable steps to ensure the protection of any analytics data accessed through the App. No personal or sensitive user data is collected, minimizing security risks.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. LinkedIn Compliance</h2>
+                <p>Video Tracker complies with LinkedIn's API Terms of Use and Data Privacy policies. We only access data for LinkedIn Pages for which we have valid administrative permissions.</p>
+            </div>
+
+            <div class="contact-section">
+                <h2>7. Contact Information</h2>
+                <p style="margin-bottom: 25px;">If you have any questions about this Privacy Policy or the App, please contact us:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Company:</strong>
+                        <span>Wasel</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong>
+                        <a href="https://www.waselae.com/" target="_blank">https://www.waselae.com/</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:walaarababa@gmail.com">walaarababa@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Wasel. All rights reserved. | Video Tracker - LinkedIn Analytics Tool</p>
+        </div>
+    </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Video Tracker by Wasel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0077B5 0%, #00A0DC 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .last-updated {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #0077B5;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #0077B5;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e1e8ed;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 8px;
+            height: 30px;
+            background: linear-gradient(135deg, #0077B5, #00A0DC);
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .section ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            color: #555;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .section li::before {
+            content: '•';
+            color: #0077B5;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            left: -15px;
+        }
+
+        .highlight-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0077B5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #0077B5;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h2::before {
+            background: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-item strong {
+            min-width: 100px;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-section {
+                padding: 25px 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .contact-item strong {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <div class="subtitle">Video Tracker by Wasel</div>
+            <div class="last-updated">Last Updated: December 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p><strong>Video Tracker</strong> ("the App") is developed and operated by <strong>Wasel</strong>. This Privacy Policy explains how we handle data collected through the App. The App is designed solely to access and analyze LinkedIn Page analytics for internal reporting purposes. <strong>We do not collect, store, sell, or share any personal information about users.</strong></p>
+            </div>
+
+            <div class="section">
+                <h2>1. Data We Access</h2>
+                <p>The App may access the following data from LinkedIn:</p>
+                <ul>
+                    <li>Page insights and analytics such as impressions, views, engagement, and follower metrics</li>
+                    <li>Data related only to the LinkedIn Page for which we have administrative permissions</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Important:</strong> No personal user data is collected or stored.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. How We Use the Data</h2>
+                <p>The accessed analytics data is used only for:</p>
+                <ul>
+                    <li>Internal reporting and analysis</li>
+                    <li>Performance tracking and monitoring</li>
+                    <li>Improving content strategy</li>
+                </ul>
+                <p>We do not use the data for advertising, distribution, or sharing with any third party.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Data Storage</h2>
+                <p>We do not store any personal data. Analytics data may be used temporarily for generating internal reports, but it is not stored long-term or shared externally.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. Data Sharing</h2>
+                <p>We do not sell, disclose, or share any data with third parties. Your privacy and the confidentiality of LinkedIn analytics data are our top priorities.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Security</h2>
+                <p>We take reasonable steps to ensure the protection of any analytics data accessed through the App. No personal or sensitive user data is collected, minimizing security risks.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. LinkedIn Compliance</h2>
+                <p>Video Tracker complies with LinkedIn's API Terms of Use and Data Privacy policies. We only access data for LinkedIn Pages for which we have valid administrative permissions.</p>
+            </div>
+
+            <div class="contact-section">
+                <h2>7. Contact Information</h2>
+                <p style="margin-bottom: 25px;">If you have any questions about this Privacy Policy or the App, please contact us:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Company:</strong>
+                        <span>Wasel</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong>
+                        <a href="https://www.waselae.com/" target="_blank">https://www.waselae.com/</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:walaarababa@gmail.com">walaarababa@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Wasel. All rights reserved. | Video Tracker - LinkedIn Analytics Tool</p>
+        </div>
+    </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Video Tracker by Wasel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0077B5 0%, #00A0DC 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .last-updated {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #0077B5;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #0077B5;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e1e8ed;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 8px;
+            height: 30px;
+            background: linear-gradient(135deg, #0077B5, #00A0DC);
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .section ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            color: #555;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .section li::before {
+            content: '•';
+            color: #0077B5;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            left: -15px;
+        }
+
+        .highlight-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0077B5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #0077B5;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 25px;
+        }
+
+        .contact-section h2::before {
+            background: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-item strong {
+            min-width: 100px;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-section {
+                padding: 25px 20px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .contact-item strong {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <div class="subtitle">Video Tracker by Wasel</div>
+            <div class="last-updated">Last Updated: December 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p><strong>Video Tracker</strong> ("the App") is developed and operated by <strong>Wasel</strong>. This Privacy Policy explains how we handle data collected through the App. The App is designed solely to access and analyze LinkedIn Page analytics for internal reporting purposes. <strong>We do not collect, store, sell, or share any personal information about users.</strong></p>
+            </div>
+
+            <div class="section">
+                <h2>1. Data We Access</h2>
+                <p>The App may access the following data from LinkedIn:</p>
+                <ul>
+                    <li>Page insights and analytics such as impressions, views, engagement, and follower metrics</li>
+                    <li>Data related only to the LinkedIn Page for which we have administrative permissions</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Important:</strong> No personal user data is collected or stored.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. How We Use the Data</h2>
+                <p>The accessed analytics data is used only for:</p>
+                <ul>
+                    <li>Internal reporting and analysis</li>
+                    <li>Performance tracking and monitoring</li>
+                    <li>Improving content strategy</li>
+                </ul>
+                <p>We do not use the data for advertising, distribution, or sharing with any third party.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Data Storage</h2>
+                <p>We do not store any personal data. Analytics data may be used temporarily for generating internal reports, but it is not stored long-term or shared externally.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. Data Sharing</h2>
+                <p>We do not sell, disclose, or share any data with third parties. Your privacy and the confidentiality of LinkedIn analytics data are our top priorities.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Security</h2>
+                <p>We take reasonable steps to ensure the protection of any analytics data accessed through the App. No personal or sensitive user data is collected, minimizing security risks.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. LinkedIn Compliance</h2>
+                <p>Video Tracker complies with LinkedIn's API Terms of Use and Data Privacy policies. We only access data for LinkedIn Pages for which we have valid administrative permissions.</p>
+            </div>
+
+            <div class="contact-section">
+                <h2>7. Contact Information</h2>
+                <p style="margin-bottom: 25px;">If you have any questions about this Privacy Policy or the App, please contact us:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Company:</strong>
+                        <span>Wasel</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong>
+                        <a href="https://www.waselae.com/" target="_blank">https://www.waselae.com/</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:walaarababa@gmail.com">walaarababa@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Wasel. All rights reserved. | Video Tracker - LinkedIn Analytics Tool</p>
+        </div>
+    </div>
+</body>
+</html>
